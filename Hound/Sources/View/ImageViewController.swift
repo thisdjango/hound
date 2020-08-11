@@ -27,7 +27,6 @@ class ImageViewController: UIViewController, UICollectionViewDelegate {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        tabBarController?.tabBar.isHidden = false
         KingfisherManager.shared.cache.clearMemoryCache()
         KingfisherManager.shared.cache.clearDiskCache()
         KingfisherManager.shared.cache.cleanExpiredDiskCache()

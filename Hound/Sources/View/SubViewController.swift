@@ -21,6 +21,10 @@ class SubViewController: BasicViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
 }
 
 extension SubViewController: UITableViewDataSource {
