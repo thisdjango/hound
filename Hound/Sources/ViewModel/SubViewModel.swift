@@ -15,14 +15,17 @@ class SubViewModel: SubViewModelProtocol {
     // MARK: - Public Properties
     var breed: String?
     var subbreeds: [String]?
-    var imagesString: ImagesStrings?
+    var myHound: MyHound?
     // MARK: - Public Funcs
-    func getSubbreedImages(subbreed: String, onSuccess: ((String)->Void)?) {
+    func getSubbreedImages(subbreed: String, onSuccess: ((MyHound)->Void)?) {
         _ = provider.rx.request(.getSubbreedImages(breed: breed ?? "hound", subbreed: subbreed)).subscribe { event in
                 switch event {
                 case let .success(response):
-                    if let data = try? response.map(ImagesStrings.self) {
-                        onSuccess?(data.message[0])
+                    if let data = try? response.map(ImagesStringsResponse.self) {
+                        self.myHound = MyHound(images: data.message)
+                        print(data.status)
+                        print(data.message)
+                        if let myHound = self.myHound { onSuccess?(myHound) }
                     }
                 case let .error(error):
                     print(error)

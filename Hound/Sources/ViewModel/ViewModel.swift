@@ -11,17 +11,18 @@ import RxSwift
 
 class ViewModel: ViewModelProtocol {
     // MARK: - Private Properties
-    private let provider = MoyaProvider<Service>()
+    private let provider = MoyaProvider<Service>(plugins: [NetworkLoggerPlugin()])
     // MARK: - Public Properties
     var breeds: [Dictionary<String, [String]>.Element]?
-    var imagesString: ImagesStrings?
+    var myHound: MyHound?
     // MARK: - Public Methods
     func getList(onSuccess: (()->Void)?) {
         _ = provider.rx.request(.getList).subscribe { [weak self] event in
                 switch event {
                 case let .success(response):
-                    if let data = try? response.map(Breeds.self) {
+                    if let data = try? response.map(BreedsResponse.self) {
                         self?.breeds = data.message.sorted(by: { $0.key < $1.key })
+                        print(data.status)
                         onSuccess?()
                     }
                 case let .error(error):
@@ -30,12 +31,15 @@ class ViewModel: ViewModelProtocol {
         }
     }
     
-    func getImagesStrings(breed: String, onSuccess: ((String)->Void)?) {
+    func getImagesStrings(breed: String, onSuccess: ((MyHound)->Void)?) {
         _ = provider.rx.request(.getImagesString(breed: breed)).subscribe { event in
                 switch event {
                 case let .success(response):
-                    if let data = try? response.map(ImagesStrings.self) {
-                        onSuccess?(data.message[0])
+                    if let data = try? response.map(ImagesStringsResponse.self) {
+                        self.myHound = MyHound(images: data.message)
+                        print(data.status)
+                        print(data.message)
+                        if let myHound = self.myHound { onSuccess?(myHound) }
                     }
                 case let .error(error):
                     print(error)

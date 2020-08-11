@@ -8,8 +8,27 @@
 
 import Foundation
 
-// MARK: - Breeds
-struct ImagesStrings: Codable {
+// MARK: - ImagesStringsResponse
+struct ImagesStringsResponse: Codable {
     var message: [String]
     var status: String
+}
+// MARK: - MyHound
+struct MyHound {
+    var images: [String]
+}
+// MARK: - UserFavorite
+final class UserFavorite {
+    var hound: String!
+    var imagesArray: [String]? {
+        get {
+            UserDefaults.standard.array(forKey: hound) as? [String]
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: hound)
+        }
+    }
+    func delete() {
+        UserDefaults.standard.removeObject(forKey: hound)
+    }
 }

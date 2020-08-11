@@ -49,12 +49,10 @@ extension SubViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ImageViewController()
         
-        viewModel.getSubbreedImages(subbreed: viewModel.subbreeds?[indexPath.row] ?? "afghan") { string in
-            vc.imageString = string
-            print("list images for subbreeds got")
+        viewModel.getSubbreedImages(subbreed: viewModel.subbreeds?[indexPath.row] ?? "afghan") { data in
+            vc.data = data
+            vc.title = self.viewModel.subbreeds?[indexPath.row].capitalizingFirstLetter()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
-        
-        vc.title = viewModel.imagesString?.message[indexPath.row].capitalizingFirstLetter()
-        navigationController?.pushViewController(vc, animated: true)
     }
 }

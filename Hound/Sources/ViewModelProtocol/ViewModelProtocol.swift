@@ -11,8 +11,7 @@ import Foundation
 protocol ViewModelProtocol: class {
     
     var breeds: [Dictionary<String, [String]>.Element]? { get set }
-    var imagesString: ImagesStrings? { get set }
     
     func getList(onSuccess: (()->Void)?)
-    func getImagesStrings(breed: String, onSuccess: ((String)->Void)?)
+    func getImagesStrings(breed: String, onSuccess: ((MyHound)->Void)?)
 }

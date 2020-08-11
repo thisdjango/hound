@@ -15,6 +15,8 @@
 		C45F926424DEB24800DC8B0C /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F926324DEB24800DC8B0C /* Configurable.swift */; };
 		C45F926824DEBB1900DC8B0C /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F926724DEBB1900DC8B0C /* ImageViewController.swift */; };
 		C45F926A24DEC13900DC8B0C /* ImagesStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F926924DEC13900DC8B0C /* ImagesStrings.swift */; };
+		C463630B24E2F32600BC84FB /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463630A24E2F32600BC84FB /* ImageViewCell.swift */; };
+		C463630D24E3345400BC84FB /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C463630C24E3345400BC84FB /* FavoriteViewModel.swift */; };
 		C47009EE24DDBE330089FFEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47009ED24DDBE330089FFEB /* AppDelegate.swift */; };
 		C47009F224DDBE330089FFEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47009F124DDBE330089FFEB /* ViewController.swift */; };
 		C47009F724DDBE370089FFEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C47009F624DDBE370089FFEB /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		C45F926324DEB24800DC8B0C /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		C45F926724DEBB1900DC8B0C /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		C45F926924DEC13900DC8B0C /* ImagesStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesStrings.swift; sourceTree = "<group>"; };
+		C463630A24E2F32600BC84FB /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
+		C463630C24E3345400BC84FB /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		C47009EA24DDBE330089FFEB /* Hound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47009ED24DDBE330089FFEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C47009F124DDBE330089FFEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,9 +144,10 @@
 				C45F926124DEB05D00DC8B0C /* BasicViewController.swift */,
 				C4700A1724DDFA6D0089FFEB /* TabBarViewController.swift */,
 				C47009F124DDBE330089FFEB /* ViewController.swift */,
-				C4700A1524DDF6D00089FFEB /* FavoriteViewController.swift */,
 				C45F925B24DEA60C00DC8B0C /* SubViewController.swift */,
 				C45F926724DEBB1900DC8B0C /* ImageViewController.swift */,
+				C4700A1524DDF6D00089FFEB /* FavoriteViewController.swift */,
+				C463630A24E2F32600BC84FB /* ImageViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			children = (
 				C4700A0924DDC96F0089FFEB /* ViewModel.swift */,
 				C45F925D24DEA8AB00DC8B0C /* SubViewModel.swift */,
+				C463630C24E3345400BC84FB /* FavoriteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -315,9 +321,11 @@
 				C47009F224DDBE330089FFEB /* ViewController.swift in Sources */,
 				C4700A0E24DDC9E00089FFEB /* ViewModelProtocol.swift in Sources */,
 				C45F926824DEBB1900DC8B0C /* ImageViewController.swift in Sources */,
+				C463630D24E3345400BC84FB /* FavoriteViewModel.swift in Sources */,
 				C4700A1624DDF6D00089FFEB /* FavoriteViewController.swift in Sources */,
 				C4700A0424DDC6D00089FFEB /* UIView.swift in Sources */,
 				C45F925E24DEA8AB00DC8B0C /* SubViewModel.swift in Sources */,
+				C463630B24E2F32600BC84FB /* ImageViewCell.swift in Sources */,
 				C45F926024DEACE300DC8B0C /* SubViewModelProtocol.swift in Sources */,
 				C4700A0A24DDC96F0089FFEB /* ViewModel.swift in Sources */,
 				C4700A1424DDF1F30089FFEB /* String.swift in Sources */,

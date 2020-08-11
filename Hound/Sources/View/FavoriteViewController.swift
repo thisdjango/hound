@@ -8,10 +8,13 @@
 
 import UIKit
 
-class FavoriteViewController: BasicViewController {
+class FavoriteViewController: ViewController {
+    // MARK: - Private Properties
+    private let viewModel = FavoriteViewModel()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Favorites"
+    // MARK: - Override Methods
+    override func configureUI() {
+        super.configureUI()
+        title = "Favourites"
     }
 }

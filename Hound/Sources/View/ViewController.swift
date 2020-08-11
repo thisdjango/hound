@@ -68,13 +68,11 @@ extension ViewController: UITableViewDelegate {
                 navigationController?.pushViewController(vc, animated: true)
             } else {
                 let vc = ImageViewController()
-                print(key)
-                viewModel.getImagesStrings(breed: key) { string in
-                    vc.imageString = string
-                    print("list of images urls got")
+                viewModel.getImagesStrings(breed: key) { data in
+                    vc.data = data
+                    vc.title = key.capitalizingFirstLetter()
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
-                vc.title = key.capitalizingFirstLetter()
-                navigationController?.pushViewController(vc, animated: true)
             }
         }
     }

@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Breeds
-struct Breeds: Codable {
+struct BreedsResponse: Codable {
     var message: [String: [String]]
     var status: String
 }
